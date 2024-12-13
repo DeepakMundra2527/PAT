@@ -22,6 +22,42 @@ button[mat-fab] {
     font-size: 16px;
 }
 
+.page-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.right-section {
+    width: 15%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.left-section {
+    width: 15%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: -55%;
+    margin-left: 5vw;
+}
+
+
+
 .task-list {
     display: flex;
     flex-wrap: wrap;

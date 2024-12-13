@@ -19,12 +19,18 @@ export class DashboardComponent {
   taskData:any;
   commentForm!: FormGroup;
   comments: any=[];
+  name: any;
+
+  getName(){
+    console.log(StorageService.getUser());
+  }
 
   constructor(private adminService: AdminService,
     private router: Router,
     private snackBar: MatSnackBar,
     private fb: FormBuilder,)
   {
+    this.getName();
     this.getPosts();
     this.getLikesAndRatings();
     this.loggedInUserId=StorageService.getUserId();

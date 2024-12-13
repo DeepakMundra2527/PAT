@@ -22,8 +22,35 @@ export class AppComponent {
   constructor(private router : Router,
     private cdr: ChangeDetectorRef,
     private authService: AuthService){
-      
+     // this.getName();
   }
+
+  name: any;
+
+  // getName() {
+    
+  //   console.log(StorageService.getUser());
+  //   console.log(StorageService.getName());
+  
+    
+  //   let name = StorageService.getName();
+  
+    
+  //   if (name) {
+  //     this.name = this.toCamelCase(name);
+  //     console.log(name);
+  //   } else {
+  //     this.name = "";
+  //   }
+  // }
+  
+  
+  // toCamelCase(str: string) {
+  //   str= str.toLowerCase()
+  //     return str.charAt(0).toUpperCase() + str.slice(1) 
+
+  // }
+  
 
   toggleForm() {
     //this.showForm = !this.showForm;

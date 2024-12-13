@@ -1,5 +1,6 @@
 <div *ngIf="!isAdminLoggedIn && !isEmployeeLoggedIn">
     <mat-toolbar color="primary" class="navbar">
+        <h1 style="align-items: center; margin-left: 47vw; font-size: 1.8em; color: #2a3035;">PAT</h1>
         <span class="spacer"></span>
         <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
         <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
@@ -15,6 +16,7 @@
             <span style="font-size: 16px;"> &nbsp;CREATE POST</span>
         </div>
         <button style="font-size: 16px;" mat-button routerLink="/admin/dashboard" routerLinkActive="active">DASHBOARD</button>
+
         <div style="display: flex; align-items: center; color: black; position: relative;">
             <button mat-icon-button (click)="toggleNotifications()" aria-label="Notifications">
                 <mat-icon style="color: white;">notifications</mat-icon>
@@ -45,6 +47,7 @@
             <span style="font-size: 16px;"> &nbsp;CREATE POST</span>
         </div>
         <button style="font-size: 16px;" mat-button routerLink="/employee/dashboard" routerLinkActive="active">DASHBOARD</button>
+        
         <div style="display: flex; align-items: center; color: black; position: relative;">
             <button mat-icon-button (click)="toggleNotifications()" aria-label="Notifications">
                 <mat-icon style="color: white;">notifications</mat-icon>

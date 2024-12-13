@@ -14,7 +14,7 @@
                 <textarea matInput placeholder="Description" formControlName="description"></textarea>
                 <mat-error *ngIf="taskForm.get('description')?.hasError('required')">This Input Is Required!</mat-error>
             </mat-form-field>
-            <div *ngIf="existingImage" class="image-preview">
+            <div *ngIf="flag && existingImage!==null && existingImage!==undefined && existingImage.length>25" class="image-preview">
                 <div class="profile-badge">
                     <img [src]="existingImage" alt="Existing Image" class="profile" />
                 </div>

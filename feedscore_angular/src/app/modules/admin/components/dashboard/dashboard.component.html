@@ -8,13 +8,22 @@
     </mat-form-field>
 </form>
 
+<div class="page-layout">
+    <div class="left-section">
+        <a href="https://www.linkedin.com/posts/imane-rharrit-73a002113_join-us-for-bath-body-works-national-activity-7109586208992743424-suzJ/?trk=public_profile_like_view" target="_blank">
+        <img style="width:18vw; margin-top: 10vh; margin-left: 2vw;" src="assets/Adpic.gif" alt="Descriptive text about the GIF" />
+        </a>
+    </div>
+
+    <div class="center-section">
 <div class="task-list">
+    <div>
     <mat-card class="task-card" *ngFor="let post of listOfPosts">
         <div class="task-details">
             <div style="    display: flex;
             justify-content: space-between;">
                 <h2 class="task-name">{{ post.title }}</h2>
-                <div *ngIf="post.userId === loggedInUserId || loggedInUserId==1">
+                <div>
                     <a *ngIf="post.userId === loggedInUserId" mat-icon-button color=" primary " class="update-button " [routerLink]=" '/employee/post/' + post.id + '/edit' ">
                         <mat-icon>edit</mat-icon>
                     </a>
@@ -77,6 +86,13 @@
         </div>
 
     </mat-card>
+</div>
+</div>
+</div>
+<div class="right-section">
+    <a href="https://www.mcdonalds.com/ca/en-ca/getmoremcds/mcdonaldsapp.html" target="_blank">
+        <img style="width:15vw; margin-top: 10vh; margin-right: -1vw;" src="assets/Mcd.gif" alt="Descriptive text about the GIF" />
+    </a>
 </div>
 
 <!-- <p style="padding-top: 15vh;">Admin logged in</p> -->

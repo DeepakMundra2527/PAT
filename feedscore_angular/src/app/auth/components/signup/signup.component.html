@@ -20,24 +20,41 @@
                     </mat-error>
                 </mat-form-field>
 
-                <mat-form-field appearance="outline">
-                    <mat-label>Mobile</mat-label>
-                    <input matInput formControlName="mobile" placeholder="Mobile" required>
-                    <mat-error *ngIf="signUpForm.get('mobile')?.invalid && signUpForm.get('mobile')?.touched">
-                        Please enter a valid mobile number.
+                <mat-form-field appearance="fill">
+                    <mat-label>Mobile Number</mat-label>
+                    <input 
+                      matInput 
+                      formControlName="mobile" 
+                      placeholder="Enter your mobile number"
+                    >
+                    <mat-error *ngIf="signUpForm.get('mobile')?.hasError('required')">
+                      Mobile number is required.
                     </mat-error>
-                </mat-form-field>
+                    <mat-error *ngIf="signUpForm.get('mobile')?.hasError('pattern')">
+                      Please enter a valid 10-digit mobile number.
+                    </mat-error>
+                  </mat-form-field>
+                  
 
-                <mat-form-field appearance="outline">
+                  <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input [type]="hidePassword ? 'password' : 'text'" matInput formControlName="password" placeholder="Password" required>
-                    <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
-                        <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <input 
+                      [type]="hidePassword ? 'password' : 'text'" 
+                      matInput 
+                      formControlName="password" 
+                      placeholder="Password" 
+                      required>
+                    <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+                      <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    <mat-error *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
-                        Please enter a valid password.
+                    <mat-error *ngIf="signUpForm.get('password')?.hasError('required') && signUpForm.get('password')?.touched">
+                      Password is required.
                     </mat-error>
-                </mat-form-field>
+                    <mat-error *ngIf="signUpForm.get('password')?.hasError('pattern')">
+                      Password must be minimum 8 characters long.
+                    </mat-error>
+                  </mat-form-field>
+                  
 
                 <mat-form-field appearance="outline">
                     <mat-label>Confirm Password</mat-label>

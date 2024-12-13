@@ -21,13 +21,21 @@ export class DashboardComponent {
   commentForm!: FormGroup;
   comments: any=[];
   notifications: any[] = [];
+  name: any;
 
+  getName(){
+    console.log(StorageService.getUser());
+    console.log(this.loggedInUserId);
+    console.log(StorageService.getName());
+    this.name=StorageService.getName();
+  }
   constructor(private employeeService: EmployeeService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
     private fb: FormBuilder,)
   {
+    this.getName();
     this.getPosts();
     this.getLikesAndRatings();
     this.loggedInUserId=StorageService.getUserId();

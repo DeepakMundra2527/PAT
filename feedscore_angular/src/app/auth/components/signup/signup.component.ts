@@ -28,8 +28,8 @@ export class SignupComponent {
       this.signUpForm = this.fb.group({
         name: [null, [Validators.required]],
         email: [null, [Validators.required, Validators.email]],
-        mobile: [null, [Validators.required, Validators.pattern('^[+]?[0-9]{1,4}?[-.s]?[(]?[0-9]{1,4}[)]?[-.s]?[0-9]{1,4}[-.s]?[0-9]{1,9}$')]],
-        password: [null, [Validators.required]],
+        mobile: [null, [Validators.required,  Validators.pattern('^\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}$')]],
+        password: [null, [Validators.required, Validators.pattern(/^.{8,}$/)]],
         confirmPassword: [null, [Validators.required]],
         securityQuestion1: ['', Validators.required],
       securityAnswer1: ['', Validators.required],

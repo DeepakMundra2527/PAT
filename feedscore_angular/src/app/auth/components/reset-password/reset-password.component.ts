@@ -40,7 +40,7 @@ export class ResetPasswordComponent {
 
     this.newPasswordForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
-      password: [null, Validators.required],
+      password: [null, [Validators.required, Validators.pattern(/^.{8,}$/)]],
       confirmPassword: [null, Validators.required],
     });
   }

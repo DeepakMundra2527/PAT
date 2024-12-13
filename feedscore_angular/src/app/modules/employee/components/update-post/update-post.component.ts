@@ -18,7 +18,7 @@ export class UpdatePostComponent {
   selectedFile!: File;
   imagePreview!: any;
   existingImage!: string | null;
-
+  flag:boolean | undefined;
   constructor(private employeeService: EmployeeService,
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
@@ -29,6 +29,7 @@ export class UpdatePostComponent {
       title: [null, [Validators.required]],
       description: [null, [Validators.required]],
     })
+    console.log(this.existingImage);
   }
 
   onFileSelected(event: any) {
@@ -48,9 +49,14 @@ export class UpdatePostComponent {
   getPostById(){
     this.employeeService.getPostById(this.id).subscribe((res:any)=>{
       console.log(res);
+      if(res.image!=null)
+        this.flag=true;
+      else
+      this.flag=false;
       this.taskForm.patchValue(res);
       this.existingImage='data:image/jpeg;base64,'+res.image;
     })
+    console.log(this.existingImage);
   }
 
   updatePost(){

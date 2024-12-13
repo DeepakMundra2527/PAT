@@ -2,11 +2,18 @@ import { Injectable } from '@angular/core';
 
 const TOKEN="token";
 const USER="user";
-
+const NAME="name";
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
+  static saveName(name: any) {
+    window.localStorage.removeItem(NAME);
+    window.localStorage.setItem(NAME,name);
+  }
+  static getName(): string{
+    return window.localStorage.getItem(NAME) || '';
+}
 
   constructor() { }
 
@@ -64,5 +71,7 @@ export class StorageService {
   static signOut():void{
     window.localStorage.removeItem(TOKEN);
     window.localStorage.removeItem(USER);
+    window.localStorage.removeItem(NAME);
+
   }
 }
